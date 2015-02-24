@@ -1,0 +1,11 @@
+extends layout
+
+block content
+	h1 Translate a Word
+
+	h3 Enter a word to translate
+	form(action="/wordSubmit", method="post")
+		input(type="text", name="word", placeholder="Word...")
+		input(type="text", name="from", placeholder="Language of word to translate")
+		input(type="text", name="to", placeholder="Language to translate it into")
+		input(type="submit")
