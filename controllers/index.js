@@ -1,4 +1,6 @@
 var Word = require('../models/word.js');
+var translate = require('../models/translate.js');
+
 
 var indexController = {
 	index: function(req, res) {
@@ -10,12 +12,15 @@ var indexController = {
 	},
 
 	translation: function(req, res){
-		res.render('translation');
+		res.render('translation', {
+			translate: translate.translateWord
+		});
 	},
 
 	wordSubmit: function(req, res){
-		console.log(Word);
+		
 		var submittedData = req.body;
+		var wordAfter = translate(submittedData.word, submittedData.from, submittedData.to);
 		var newWord = new Word({
 			word: submittedData.word,
 			from: submittedData.from,
@@ -23,12 +28,14 @@ var indexController = {
 		});
 		newWord.save(function(err, result){
 			res.redirect('/translation');
-			console.log(newWord);
 			// console.log(newWord.word, newWord.from, newWord.to);
 			// translateWord(newWord.word, newWord.from, newWord.to);
+			console.log('wordAfter: ', wordAfter);
 		});
-
+			
 	}
 };
+	
+	
 
 module.exports = indexController;
