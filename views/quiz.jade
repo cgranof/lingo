@@ -4,27 +4,30 @@ html(lang='en')
     link(href="styles/quiz.css" rel="stylesheet" type="text/css")
 
 block content
-   
-  h1.title Choose a language
-  .container.langBar
+
+  h1.text-center Choose a language
+    h3.subTitle.text-center to begin quiz
+  .container
     .lang
       .btn-group.btn-group-justified
         .btn-group
-          button.langButton.btn.btn-default French
+          button(value="fra").langButton.btn.btn-default.btn-lg French
         .btn-group
-          button.langButton.btn.btn-default Spanish
+          button(value="spa").langButton.btn.btn-default.btn-lg Spanish
         .btn-group
-          button.langButton.btn.btn-default German
+          button(value="ger").langButton.btn.btn-default.btn-lg German
         .btn-group
-          button.langButton.btn.btn-default Italian
+          button(value="ita").langButton.btn.btn-default.btn-lg Italian
 
-  .container.quiz-container
-    .row
-      form#quiz-form
-        .col-md-4
-          input.form-control#word(type="text", name="word", placeholder="Word...")
-        .col-md-1
-          input.form-control.btn-primary(type="submit")
+  .container
+    .row.quiz-container
+      form#quiz-form(action="/quizSubmit", method="post")
+        .col-sm-4
+          h4.randomWord= words.word
+        .submitContainer
+          .col-sm-4
+            input.form-control#word(type="text", name="word", placeholder="Word...")
+          .col-sm-2
+            input.form-control.btn-primary(type="submit")
 
 
-    

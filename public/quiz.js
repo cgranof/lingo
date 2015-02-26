@@ -1,26 +1,40 @@
-// var Promise = require('promise');
+// CLIENT-SIDE
 
+// var Promise = require('promise');
+var lang = '';
 $(document).on('ready', function(){
 
 	$('.langButton').on('click', function(){
-		console.log('click');
-		$('.quiz-container').show();
-
+		$('.quiz-container').fadeIn();
+		$('.langButton').removeClass('active');
+		$(this).addClass('active');
+		lang = $(this).val();
+		// console.log(lang);
 	});
+
+	// $('#translate-form').on('submit', function(){
+	// 	$('.translated').fadeIn();
+	// 	console.log('click');
+	// });
 
 	$('#quiz-form').on('submit', function(e){
 		e.preventDefault();
-		var word = $('#word').val();
-		var to = $('#to').val();
-		var from = $('#langCode').val();
-
+		var word = $('.randomWord').text();
+		var toLang = lang;
 		var wordObject = {
 			text: word,
-			from: from,
-			to: to
+			from: 'eng',
+			to: toLang
 		};
-		console.log(wordObject);
-		console.log('click');
-	
+		// console.log('wordObject: ', wordObject);
+		// console.log('click');
+		this.reset();
+
+		$.post('/quiz/quizSubmit', wordObject, function(dataFromServer){
+			console.log('dataFromServer: ', dataFromServer);
+		});
+
 	});
+
+
 });

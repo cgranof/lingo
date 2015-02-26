@@ -1,14 +1,15 @@
 var mongoose =  require('mongoose');
-var BeGlobal = require('node-beglobal');
+var random = require('mongoose-simple-random');
 
 var wordSchema = mongoose.Schema({
 	word: String,
-	from: String,
-	to: String
+  numCorrect : Number,
+  numIncorrect : Number,
+  numAttempted : Number
 });
 
+wordSchema.plugin(random);
+
 var Word = mongoose.model('Word', wordSchema);
-
-
 
 module.exports = Word;

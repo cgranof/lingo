@@ -1,10 +1,6 @@
 var Word = require('../models/word.js');
-// var translate = require('../models/translate.js');
-// var BeGlobal = require('node-beglobal');
 var beglobal = require('../config.js');
-// var beglobal = new BeGlobal.BeglobalAPI({
-// 	api_token: 'M%2B85b%2Bmgeo4OsLdHt0IVEw%3D%3D'
-// });
+
 
 var indexController = {
 	index: function(req, res) {
@@ -28,11 +24,10 @@ var indexController = {
 					if (err) {
 						console.log('error:', err);
 						res.redirect('/error');
-					}				
+					}
 					var serverResults = results;
 					console.log(results);
 					res.send({translationResults: serverResults});
-
 				}
 			);
 		};
@@ -44,7 +39,5 @@ var indexController = {
 	}
 
 };
-	
-	
 
 module.exports = indexController;
