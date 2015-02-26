@@ -19,7 +19,7 @@ $(document).on('ready', function(){
 
 	$('#quiz-form').on('submit', function(e){
 		e.preventDefault();
-		var word = $('#word').val();
+		var word = $('.randomWord').text();
 		var toLang = lang;
 		var wordObject = {
 			text: word,

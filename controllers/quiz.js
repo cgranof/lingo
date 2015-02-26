@@ -1,3 +1,5 @@
+// SERVER-SIDE
+
 var Word = require('../models/word.js');
 var beglobal = require('../config.js');
 
@@ -7,10 +9,6 @@ var quizController = {
 	error: function(req, res){
 		res.render('error');
 	},
-
-	// wordSubmit: function(req, res){
-
-	// },
 
 	quiz: function(req, res){
 		Word.findOneRandom(function(err, wordsFromDB){
@@ -22,6 +20,7 @@ var quizController = {
 					words : wordsFromDB
 				});
 			}
+			// console.log('word from DB: ', wordsFromDB.word);
 		});
 	},
 
