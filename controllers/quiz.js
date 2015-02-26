@@ -29,6 +29,10 @@ var quizController = {
 
 	quiz: function(req, res){
 		res.render('quiz');
+	},
+
+	quizSubmit: function(req, res){
+		res.send(req.body);
 	}
 
 };

@@ -18,14 +18,21 @@ $(document).on('ready', function(){
 	$('#quiz-form').on('submit', function(e){
 		e.preventDefault();
 		var word = $('#word').val();
-
+		var toLang = lang;
 		var wordObject = {
 			text: word,
 			from: 'eng',
-			to: lang
+			to: toLang
 		};
-		console.log(wordObject);
-		console.log('click');
+		// console.log('wordObject: ', wordObject);
+		// console.log('click');
+		this.reset();
+
+		$.post('/quiz/quizSubmit', wordObject, function(dataFromServer){
+			console.log('dataFromServer: ', dataFromServer);
+		});
 
 	});
+
+
 });
