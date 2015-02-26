@@ -5,6 +5,7 @@ var indexController = require('./controllers/index.js');
 var app = express();
 var mongoose = require('mongoose');
 
+
 mongoose.connect('mongodb://localhost/lingo');
 
 app.set('view engine', 'jade');
@@ -14,7 +15,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.get('/', indexController.index);
 app.get('/translate', indexController.translate);
-app.get('/translation', indexController.translation);
+app.get('/error', indexController.error);
+app.get('/quiz', indexController.quiz);
 
 app.post('/wordSubmit', indexController.wordSubmit);
 
