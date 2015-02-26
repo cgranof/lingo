@@ -13,7 +13,16 @@ var quizController = {
 	// },
 
 	quiz: function(req, res){
-		res.render('quiz');
+		Word.findOneRandom(function(err, wordsFromDB){
+			if (err) {
+				console.log(err);
+			}
+			else {
+				res.render('quiz', {
+					words : wordsFromDB
+				});
+			}
+		});
 	},
 
 	quizSubmit: function(req, res){

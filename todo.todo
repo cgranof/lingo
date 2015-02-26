@@ -1,6 +1,6 @@
 
 Flow of Quiz information:
- ☐ Get random word from db
+ ✔ Get random word from db @done (15-02-26 15:37)
  ☐ Display word on page
  ☐ Submit form with word pulled from db + language type + answer + 'eng' to server to check API
    Validation:

@@ -1,4 +1,5 @@
 var mongoose =  require('mongoose');
+var random = require('mongoose-simple-random');
 
 var wordSchema = mongoose.Schema({
 	word: String,
@@ -6,6 +7,8 @@ var wordSchema = mongoose.Schema({
   numIncorrect : Number,
   numAttempted : Number
 });
+
+wordSchema.plugin(random);
 
 var Word = mongoose.model('Word', wordSchema);
 

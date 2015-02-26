@@ -23,7 +23,7 @@ block content
     .row.quiz-container
       form#quiz-form(action="/quizSubmit", method="post")
         .col-sm-4
-          h4.randomWord Translate
+          h4.randomWord= words.word
         .submitContainer
           .col-sm-4
             input.form-control#word(type="text", name="word", placeholder="Word...")
