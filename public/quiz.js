@@ -1,3 +1,5 @@
+// CLIENT-SIDE
+
 // var Promise = require('promise');
 var lang = '';
 $(document).on('ready', function(){

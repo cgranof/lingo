@@ -1,4 +1,29 @@
 
+Flow of Quiz information:
+ ☐ Get random word from db
+ ☐ Display word on page
+ ☐ Submit form with word pulled from db + language type + answer + 'eng' to server to check API
+   Validation:
+    ☐ Check if CORRECT
+      ☐ if correct, add +1 to numCorrect (server)
+        ☐ add +1 to numAttempted (server)
+        ☐ return success (server)
+        ☐ show success message (client)
+      ☐ If INCORRECT
+        ☐ if 1 char wrong, count correct but warn of spelling (client)
+        ☐ if missing accents, count as correct but warn of missing accents (client)
+        ☐ return correct word (server)
+        ☐ show incorrect message with correct word (server)
+ ☐ Prompt for next word to translate
+
+Additional Functionatlity:
+ ☐ If 3 incorrect answers, user fails, quiz starts over
+ ☐ After 10 questions, quiz is complete, start another quiz
+ ☐ After 3 quizs, allow user to choose between
+   ☐ Random (default quiz)
+   ☐ Hardest (10 words that have been incorrect the most)
+   ☐ Least practiced (10 words practiced the least)
+   ☐ Most Recent (The most recent 10 words practiced)
 
 User Schema:
  ☐ quizWords
@@ -6,15 +31,16 @@ User Schema:
    ☐ Number of times correct
    ☐ Number of times incorrect
    ☐ Number of times attempted
- ☐ Total quizes taken
- ☐ Number of quizzes passed
- ☐ Number of quizzes failed
- ☐ % quizzes passed
- ☐ Total number of words translated
- ☐ Number of words translated correctly
- ☐ Number of words translated incorrectly
- ☐ % words translated
+
+Progress:
+   ☐ Total quizes taken
+   ☐ Number of quizzes passed
+   ☐ Number of quizzes failed
+   ☐ % quizzes passed
+   ☐ Total number of words translated
+   ☐ Number of words translated correctly
+   ☐ Number of words translated incorrectly
+   ☐ % words translated
+   ☐ Allow user to reset all their data
  Best 10 words
  Worst 10 words
-
- ☐ Allow user to reset all their data
