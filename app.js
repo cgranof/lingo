@@ -1,12 +1,15 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var indexController = require('./controllers/index.js');
+var quizController = require('./controllers/quiz.js');
 
 var app = express();
+
 var mongoose = require('mongoose');
-
-
 mongoose.connect('mongodb://localhost/lingo');
+
+// Seed the database
+require('./models/seeds/wordSeed.js');
 
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
@@ -16,7 +19,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.get('/', indexController.index);
 app.get('/translate', indexController.translate);
 app.get('/error', indexController.error);
-app.get('/quiz', indexController.quiz);
+app.get('/quiz', quizController.quiz);
 
 app.post('/wordSubmit', indexController.wordSubmit);
 

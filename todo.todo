@@ -1,0 +1,20 @@
+
+
+User Schema:
+ ☐ quizWords
+   ☐ Word in english
+   ☐ Number of times correct
+   ☐ Number of times incorrect
+   ☐ Number of times attempted
+ ☐ Total quizes taken
+ ☐ Number of quizzes passed
+ ☐ Number of quizzes failed
+ ☐ % quizzes passed
+ ☐ Total number of words translated
+ ☐ Number of words translated correctly
+ ☐ Number of words translated incorrectly
+ ☐ % words translated
+ Best 10 words
+ Worst 10 words
+
+ ☐ Allow user to reset all their data

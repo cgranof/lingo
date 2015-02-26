@@ -1,14 +1,17 @@
 extends layout
 
 block content
-	h1 Translate a Word
-
-	h3 Enter a word to translate
-	form#translate-form(action="/wordSubmit", method="post")
-		input#word(type="text", name="word", placeholder="Word...")
-		input#to(type="text", name="from", placeholder="Language of word to translate")
-		input#from(type="text", name="to", placeholder="Language to translate it into")
-		input(type="submit")
-	
-	h4 Translation-
-		p.translated
+	.container
+		h1 Translate a Word
+			h3 Enter a word to translate
+			form#translate-form(action="/wordSubmit", method="post")
+				.row
+					.col-sm-3
+						input.form-control.input-lg#word(type="text", name="word", placeholder="Word...")
+					.col-sm-3
+						input.form-control.input-lg#from(type="text", name="from", placeholder="Origin Language..")
+					.col-sm-3
+						input.form-control.input-lg#to(type="text", name="to", placeholder="Destination Language..")
+					.col-sm-2
+						input.form-control.input-lg(type="submit")
+			h3.randomWord.translated

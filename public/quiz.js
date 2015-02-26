@@ -8,9 +8,12 @@ $(document).on('ready', function(){
 		$(this).addClass('active');
 		lang = $(this).val();
 		// console.log(lang);
-
-
 	});
+
+	// $('#translate-form').on('submit', function(){
+	// 	$('.translated').fadeIn();
+	// 	console.log('click');
+	// });
 
 	$('#quiz-form').on('submit', function(e){
 		e.preventDefault();

@@ -2,17 +2,10 @@ var Word = require('../models/word.js');
 var beglobal = require('../config.js');
 
 
-var indexController = {
-	index: function(req, res) {
-		res.render('index');
-	},
+var quizController = {
 
 	error: function(req, res){
 		res.render('error');
-	},
-
-	translate: function(req, res){
-		res.render('translate');
 	},
 
 	wordSubmit: function(req, res){
@@ -22,8 +15,8 @@ var indexController = {
 				{text: text, from: from, to: to},
 				function(err, results){
 					if (err) {
-						console.log('error:', err);
-						res.redirect('/error');
+						console.log('error API:', err);
+						// res.redirect('/error');
 					}
 					var serverResults = results;
 					console.log(results);
@@ -40,4 +33,6 @@ var indexController = {
 
 };
 
-module.exports = indexController;
+
+
+module.exports = quizController;

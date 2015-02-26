@@ -2,6 +2,9 @@ body, h1, h3 {
 font-family: 'Lato', sans-serif;
 }
 
+.homeLink {
+  text-decoration: none;
+}
 .langBar {
 	margin-top: 20px;
 }

@@ -19,6 +19,7 @@ $(document).on('ready', function(){
 				dataFromServer.translationResults.translation
 			);
 		});
+		this.reset();
 	});
 
 });
