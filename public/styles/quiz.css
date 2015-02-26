@@ -1,12 +1,32 @@
+body, h1, h3 {
+font-family: 'Lato', sans-serif;
+}
+
 .langBar {
-	margin-top: 10px;
+	margin-top: 20px;
 }
 
 .title {
+  text-align: center;
+}
+
+.subTitle {
 	text-align: center;
+  margin-top: 5px;
 }
 
 .quiz-container {
 	display: none;
 	margin-top: 100px;
+  height: 50px;
+}
+
+.randomWord {
+  text-align: center;
+  font-size: 3.5em;
+  font-style: italic;
+}
+
+.submitContainer {
+  padding-top: 25px;
 }
