@@ -2,16 +2,22 @@ extends layout
 
 block content
 	.container
+		button.btn.btn-default.homeButton
+			a(href='/') Home
 		h1 Translate a Word
 			h3 Enter a word to translate
 			form#translate-form(action="/wordSubmit", method="post")
 				.row
-					.col-sm-3
+					.col-sm-7
 						input.form-control.input-lg#word(type="text", name="word", placeholder="Word...")
+				.row
 					.col-sm-3
 						input.form-control.input-lg#from(type="text", name="from", placeholder="Origin Language..")
+					.col-sm-1
+						p.text-center.tranSeperate to
 					.col-sm-3
 						input.form-control.input-lg#to(type="text", name="to", placeholder="Destination Language..")
-					.col-sm-2
+				.row
+					.col-sm-7
 						input.form-control.input-lg(type="submit")
-			h3.randomWord.translated
+						h3.randomWord.translated

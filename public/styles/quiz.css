@@ -28,3 +28,12 @@ font-family: 'Lato', sans-serif;
 .submitContainer {
   padding-top: 25px;
 }
+
+.tranSeperate {
+  font-size: 1.4em;
+  margin-top: 7px;
+}
+
+.homeButton {
+  text-decoration: none;
+}
