@@ -38,10 +38,12 @@ var quizController = {
 						// res.redirect('/error');
 					}
 					var serverResults = results;
+					console.log('server results: ', serverResults);
+					console.log('entered word: ', submittedData);
 							// Validate if translation is correct or not
 							var checkTranslation = function(results){
 								// Check if submission is correct word for word
-								if(submittedData.answer.toLowerCase() === results.translation.toLowerCase()){
+								if(submittedData.answer.toLowerCase() == results.translation.toLowerCase()){
 									console.log(submittedData.text);
 									// Add one to numCorrect and numAttempted
 									Word.findOneAndUpdate(
@@ -49,13 +51,25 @@ var quizController = {
 										{ $inc: { numCorrect: 1,
 															numAttempted: 1 } },
 										{upsert: true},
-								    function(err, result){
-								    	console.log('correct +1correct & +1attemped');
-								    	res.send('correct');
-								    }
+									    function(err, result){
+									    	console.log('correct +1correct & +1attemped');
+									    	res.send('correct');
+									    }
 									);
 								}
-								else { console.log('incorrect');}
+								else {
+									Word.findOneAndUpdate(
+										{ word: submittedData.text },
+										{ $inc: { numInorrect: 1,
+															numAttempted: 1 } },
+										{upsert: true},
+									    function(err, result){
+									    	console.log('incorrect +1incorrect & +1attemped');
+									    	res.send('incorrect');
+									    }
+									);
+									console.log('incorrect');
+								}
 							};
 						// Check if submitted answer matches translateWord API
 						checkTranslation(serverResults);
@@ -64,6 +78,19 @@ var quizController = {
 		};
 		// Pass submitted data to translate API
 		translateWord(submittedData.text, submittedData.from, submittedData.to);
+	},
+
+	newWord : function (req, res){
+		// Pass random word from DB for next question
+		Word.findOneRandom(function(err, wordsFromDB){
+			if (err) {
+				console.log('err: ', err);
+			}
+			else {
+				res.send(wordsFromDB);
+			}
+			// console.log('word from DB: ', wordsFromDB.word);
+		});
 	}
 
 };

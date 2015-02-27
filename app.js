@@ -20,6 +20,7 @@ app.get('/', indexController.index);
 app.get('/translate', indexController.translate);
 app.get('/error', indexController.error);
 app.get('/quiz', quizController.quiz);
+app.get('/quiz/newWord', quizController.newWord);
 
 app.post('/wordSubmit', indexController.wordSubmit);
 app.post('/quiz/quizSubmit', quizController.quizSubmit);

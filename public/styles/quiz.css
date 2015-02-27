@@ -46,6 +46,10 @@ font-family: 'Lato', sans-serif;
   color: green;
 }
 
+.inCorrect {
+  color: red;
+}
+
 .homeButton {
   width: 60px;
   height: 30px;
@@ -73,4 +77,12 @@ font-family: 'Lato', sans-serif;
     display: inline-block;
     vertical-align: middle;
     float: none;
+}
+
+#nextButton {
+  display: none;
+}
+
+.quiz-container-hidden {
+  display: none;
 }
