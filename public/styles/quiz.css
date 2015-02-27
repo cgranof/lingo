@@ -45,3 +45,32 @@ font-family: 'Lato', sans-serif;
 .correct {
   color: green;
 }
+
+.homeButton {
+  width: 60px;
+  height: 30px;
+  display: table-cell;
+  vertical-align: middle;
+  float: none;
+  font-size: 1.3em;
+  padding-top: 10px;
+}
+
+.homeButton a {
+  text-decoration: none;
+  color: black;
+}
+
+.linkBottom {
+  width: 80px;
+  border-bottom: 1px solid black;
+  display: table-cell;
+  text-align: center;
+  float: none;
+}
+
+.vCenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}

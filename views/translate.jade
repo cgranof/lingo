@@ -2,8 +2,10 @@ extends layout
 
 block content
 	.container
-		button.btn.btn-default.homeButton
+		.homeButton.text-center
 			a(href='/') Home
+			.linkBottom
+	.container
 		h1 Translate a Word
 			h3 Enter a word to translate
 			form#translate-form(action="/wordSubmit", method="post")

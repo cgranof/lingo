@@ -12,6 +12,7 @@ Flow of Quiz information:
         ✔ return success (server) @done (15-02-27 12:50)
         ✔ show success message (client) @done (15-02-27 12:50)
       ☐ If INCORRECT
+        ☐ Create .incorrect class(red)
         ☐ if 1 char wrong, count correct but warn of spelling (client)
         ☐ if missing accents, count as correct but warn of missing accents (client)
         ☐ return correct word (server)
