@@ -2,6 +2,17 @@
 
 // var Promise = require('promise');
 var lang = '';
+
+var displayFeedback = function(input){
+	if(input === 'correct'){
+		$('.quiz-container').addClass('has-success');
+				console.log('correct!');
+		$('#word').after('<span id="checkMark" class="glyphicon glyphicon-ok form-control-feedback">');
+		$('.randomWord').addClass('correct');
+	}
+
+};
+
 $(document).on('ready', function(){
 
 	$('.langButton').on('click', function(){
@@ -29,6 +40,7 @@ $(document).on('ready', function(){
 
 		$.post('/quiz/quizSubmit', wordObject, function(dataFromServer){
 			console.log('dataFromServer: ', dataFromServer);
+			displayFeedback(dataFromServer);
 		});
 	});
 });

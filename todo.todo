@@ -6,17 +6,18 @@ Flow of Quiz information:
  ✔ Check API @done (15-02-26 16:55)
    Validation:
     ☐ Check if CORRECT
-      ☐ if completly correct
+      ✔ if completly correct @done (15-02-27 12:50)
         ✔ add +1 to numCorrect (server) @done (15-02-26 17:50)
-        ☐ add +1 to numAttempted (server)
-        ☐ return success (server)
-        ☐ show success message (client)
+        ✔ add +1 to numAttempted (server) @done (15-02-27 12:21)
+        ✔ return success (server) @done (15-02-27 12:50)
+        ✔ show success message (client) @done (15-02-27 12:50)
       ☐ If INCORRECT
         ☐ if 1 char wrong, count correct but warn of spelling (client)
         ☐ if missing accents, count as correct but warn of missing accents (client)
         ☐ return correct word (server)
         ☐ show incorrect message with correct word (server)
  ☐ Prompt for next word to translate
+ ☐ Clean up quiz controller
 
 Additional Functionatlity:
  ☐ If 3 incorrect answers, user fails, quiz starts over

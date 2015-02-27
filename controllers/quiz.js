@@ -43,16 +43,17 @@ var quizController = {
 								// Check if submission is correct word for word
 								if(submittedData.answer.toLowerCase() === results.translation.toLowerCase()){
 									console.log(submittedData.text);
-									// Add one to numCorrect
+									// Add one to numCorrect and numAttempted
 									Word.findOneAndUpdate(
 										{ word: submittedData.text },
-										{ $inc: { numCorrect: 1 } },
+										{ $inc: { numCorrect: 1,
+															numAttempted: 1 } },
 										{upsert: true},
-								    function(err, camp){
-								    	console.log('done');
+								    function(err, result){
+								    	console.log('correct +1correct & +1attemped');
+								    	res.send('correct');
 								    }
 									);
-									res.send({serverResults: serverResults});
 								}
 								else { console.log('incorrect');}
 							};

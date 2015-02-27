@@ -37,3 +37,11 @@ font-family: 'Lato', sans-serif;
 .homeButton {
   text-decoration: none;
 }
+
+#checkMark {
+  right: 15px;
+}
+
+.correct {
+  color: green;
+}
