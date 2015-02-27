@@ -12,17 +12,14 @@ $(document).on('ready', function(){
 		// console.log(lang);
 	});
 
-	// $('#translate-form').on('submit', function(){
-	// 	$('.translated').fadeIn();
-	// 	console.log('click');
-	// });
-
 	$('#quiz-form').on('submit', function(e){
 		e.preventDefault();
-		var word = $('.randomWord').text();
+		var answer = $('#word').val();
+		var wordDB = $('.randomWord').text();
 		var toLang = lang;
 		var wordObject = {
-			text: word,
+			answer : answer,
+			text: wordDB,
 			from: 'eng',
 			to: toLang
 		};
@@ -33,8 +30,5 @@ $(document).on('ready', function(){
 		$.post('/quiz/quizSubmit', wordObject, function(dataFromServer){
 			console.log('dataFromServer: ', dataFromServer);
 		});
-
 	});
-
-
 });

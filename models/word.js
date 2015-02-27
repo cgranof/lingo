@@ -7,7 +7,7 @@ var wordSchema = mongoose.Schema({
   numIncorrect : Number,
   numAttempted : Number
 });
-
+// Random word plugin
 wordSchema.plugin(random);
 
 var Word = mongoose.model('Word', wordSchema);

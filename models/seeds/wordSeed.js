@@ -1,8 +1,8 @@
 var Word = require('../word.js');
 
+// Prefill the empty database with some Words
 Word.find({}, function(err, documents){
   if(documents.length === 0){
-    // Prefill the empty database with some Words
     var furniture = new Word({
         "word": "furniture",
         "numCorrect" : 0,

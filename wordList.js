@@ -1,7 +1,7 @@
 var words = [
-'furniture',
-'attraction',
-'well-off',
+// 'furniture',
+// 'attraction',
+// 'well-off',
 'dapper',
 'cowardly',
 'permissible',

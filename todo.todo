@@ -2,11 +2,12 @@
 Flow of Quiz information:
  ✔ Get random word from db @done (15-02-26 15:37)
  ✔ Display word on page @done (15-02-26 15:40)
- ☐ Submit form with word pulled from db + language type + answer + 'eng' to server
- ☐ Check API
+ ✔ Submit form with word pulled from db + language type + answer + 'eng' to server @done (15-02-26 16:55)
+ ✔ Check API @done (15-02-26 16:55)
    Validation:
     ☐ Check if CORRECT
-      ☐ if correct, add +1 to numCorrect (server)
+      ☐ if completly correct
+        ✔ add +1 to numCorrect (server) @done (15-02-26 17:50)
         ☐ add +1 to numAttempted (server)
         ☐ return success (server)
         ☐ show success message (client)
